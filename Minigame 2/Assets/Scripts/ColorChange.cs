@@ -23,12 +23,12 @@ public class ColorChange : MonoBehaviour
         // You don't need to declare 'health' again - just change the value.
         
         // STEP 3 -------------------------------------------------------------
-
+        health--;
         // STEP 4 -------------------------------------------------------------
         // DECLARE a new float value named 'r' with a value of 1.
         
         // STEP 4 -------------------------------------------------------------
-
+        float r=1f;
         // STEP 5 -------------------------------------------------------------
         // Add three more else/if statements to this. 
         // IF health is 3, set the value of 'r' to 1.0.
@@ -38,9 +38,15 @@ public class ColorChange : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        else if(health==3) r=1f;
+        else if(health==2) r=0.5f;
+        else if(health==1) r=0f;
+
+
         
         // When you're done, uncomment the line below.
-        //_spriteRenderer.color = new Color(r, 0.2f, 0.2f);
+        _spriteRenderer.color = new Color(r, 0.2f, 0.2f);
         // STEP 5 -------------------------------------------------------------
 
         _healthText.gameObject.SetActive(true);
@@ -48,7 +54,7 @@ public class ColorChange : MonoBehaviour
         // STEP 6 -------------------------------------------------------------
         // Add the value of heatlh to this string, so that the heatlh text
         //      displays the prop's current health value.
-        _healthText.text = "h = ";
+        _healthText.text = "h = "+health;
         // STEP 6 -------------------------------------------------------------
     }
 }
